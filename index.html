@@ -1,9 +1,313 @@
 <!-- index.html -->
 <!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>Mahamkali_Naveen</title></head>
-  <body>
-    <h1>Hello — my GitHub Pages site!</h1>
-    <p>Made with ♥ and GitHub Pages.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prof. [Your Name] — Home</title>
+  <meta name="description" content="Academic profile of Prof. [Your Name]" />
+  <style>
+    :root{
+      --accent:#0b66c3;
+      --bg:#ffffff;
+      --muted:#6b7280;
+      --maxw:1000px;
+      --card-shadow: 0 6px 18px rgba(12,20,40,0.06);
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f1724;line-height:1.5}
+    header{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid #eef2f7}
+    .nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{width:52px;height:52px;border-radius:8px;object-fit:cover}
+    .brand h1{font-size:18px;margin:0}
+    nav a{margin-left:16px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav a.active{color:var(--accent)}
+    main{max-width:var(--maxw);margin:28px auto;padding:0 18px}
+    .hero{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center}
+    .photo{width:120px;height:120px;border-radius:12px;object-fit:cover;box-shadow:var(--card-shadow)}
+    .intro h2{margin:0 0 6px 0}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .chip{background:#f1f5f9;padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
+    .card{background:white;padding:16px;border-radius:var(--radius);box-shadow:var(--card-shadow)}
+    h3{margin:0 0 10px 0}
+    /* Students table */
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border-bottom:1px solid #f1f5f9;text-align:left}
+    th{font-weight:700;color:var(--muted)}
+    /* Publications */
+    .controls{display:flex;gap:8px;align-items:center}
+    input[type=search]{padding:8px 10px;border-radius:10px;border:1px solid #e6eef6;min-width:220px}
+    select{padding:8px;border-radius:10px;border:1px solid #e6eef6}
+    .pub-list{display:flex;flex-direction:column;gap:12px}
+    .pub{padding:12px;border-radius:10px;border:1px solid #eef4fb}
+    .meta{font-size:13px;color:var(--muted);margin-top:6px}
+    footer{text-align:center;color:var(--muted);margin:36px 0}
+    /* responsive */
+    @media (max-width:800px){
+      .grid{grid-template-columns:1fr}
+      .hero{grid-template-columns:96px 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <img src="assets/img/profile.jpg" alt="Profile photo" />
+        <div>
+          <h1 id="prof-name">Prof. [Your Name]</h1>
+          <div style="font-size:13px;color:var(--muted)">Assistant Professor — Department of Computer Science</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home" class="navlink active" data-target="home">Home</a>
+        <a href="#students" class="navlink" data-target="students">Students</a>
+        <a href="#publications" class="navlink" data-target="publications">Publications</a>
+        <a href="#projects" class="navlink" data-target="projects">Projects</a>
+        <a href="#teaching" class="navlink" data-target="teaching">Teaching</a>
+        <a href="#contact" class="navlink" data-target="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home">
+      <div class="hero">
+        <img class="photo" src="assets/img/profile.jpg" alt="photo" />
+        <div class="intro">
+          <h2 id="headline">Prof. [Your Name] — Researcher in Computer Vision & Machine Learning</h2>
+          <p id="short-bio">Short bio goes here. Example: My research interests include deep learning for medical imaging, computer vision, and AI for healthcare. I supervise PhD and M.Tech students and teach undergraduate courses in image processing.</p>
+          <div class="chips">
+            <div class="chip">Computer Vision</div>
+            <div class="chip">Deep Learning</div>
+            <div class="chip">Medical Imaging</div>
+            <div class="chip">AI in Healthcare</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Quick Links</h3>
+          <p class="meta">Google Scholar, ResearchGate, ORCID, LinkedIn</p>
+          <div style="margin-top:10px"><a id="gs-link" href="#">Google Scholar</a> · <a id="rg-link" href="#">ResearchGate</a> · <a id="orcid-link" href="#">ORCID</a></div>
+        </div>
+        <div class="card">
+          <h3>Latest Highlight</h3>
+          <p id="highlight">Latest publication or award — add a short highlight here.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENTS -->
+    <section id="students" style="margin-top:26px">
+      <div class="card">
+        <h3>Research Students</h3>
+        <h4 style="margin-top:12px">Ph.D. Students</h4>
+        <table id="phd-table">
+          <thead><tr><th>Name</th><th>Thesis / Topic</th><th>Start</th><th>Status</th></tr></thead>
+          <tbody></tbody>
+        </table>
+
+        <h4 style="margin-top:16px">M.Tech Students</h4>
+        <table id="mtech-table">
+          <thead><tr><th>Name</th><th>Project Title</th><th>Year</th><th>Role</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" style="margin-top:26px">
+      <div class="card">
+        <h3>Publications</h3>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+          <div class="controls">
+            <input type="search" id="pub-search" placeholder="Search by author, title, keyword..." />
+            <select id="year-filter">
+              <option value="all">All years</option>
+            </select>
+            <select id="type-filter">
+              <option value="all">All types</option>
+              <option value="journal">Journal</option>
+              <option value="conference">Conference</option>
+              <option value="workshop">Workshop</option>
+              <option value="preprint">Preprint</option>
+            </select>
+          </div>
+          <div style="font-size:13px;color:var(--muted)">Showing <span id="pub-count">0</span> publications</div>
+        </div>
+
+        <div class="pub-list" id="pub-list"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" style="margin-top:26px">
+      <div class="card">
+        <h3>Selected Projects</h3>
+        <div id="projects-list"></div>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching" style="margin-top:26px">
+      <div class="card">
+        <h3>Teaching</h3>
+        <ul id="courses-list">
+          <li>Digital Image Processing — B.Tech (Coordinator)</li>
+          <li>AI-Driven Autonomous Systems — M.Tech (Guest lecture)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="margin-top:26px">
+      <div class="card">
+        <h3>Contact</h3>
+        <p>Email: <a id="email-link" href="mailto:you@institute.edu">you@institute.edu</a></p>
+        <p>Office: Room XYZ, Department of Computer Science, Your University</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year">2025</span> Prof. [Your Name] — Built with a custom HTML template
+    </footer>
+  </main>
+
+  <script>
+    /********** Sample data: replace with your real data **********/n
+    const DATA = {
+      profile:{
+        name: "Prof. Naveen Kumar",
+        title: "Assistant Professor, Computer Science & Engineering",
+        bio: "Research: Computer Vision, Medical Imaging, Deep Learning. Teaches Digital Image Processing and AI courses.",
+        links:{
+          scholar:'#',
+          researchgate:'#',
+          orcid:'#',
+          linkedin:'#'
+        }
+      },
+      students:{
+        phd:[
+          {name:'Geetesh Nanda',topic:'Deep learning for leaf disease classification',start:2022,status:'Ongoing'},
+          {name:'Sidhvik Nanda',topic:'Texture features for medical imaging',start:2023,status:'Ongoing'}
+        ],
+        mtech:[
+          {name:'Student A',project:'Automated attendance using CV',year:2024,role:'Co-Supervisor'},
+          {name:'Student B',project:'ECG image classification',year:2023,role:'Supervisor'}
+        ]
+      },
+      publications:[
+        {authors:'N. Kumar, A. Author',title:'Meta-Learning-Driven Stacked Ensemble of ResNet and VGG for Cotton Leaf Disease Classification',venue:'Journal of Plant Diseases',year:2025,type:'journal',doi:'#',link:'#'},
+        {authors:'N. Kumar, B. Author',title:'Fall Detection using Vision Transformers',venue:'IEEE Int. Conf. on CV',year:2024,type:'conference',doi:'#',link:'#'},
+        {authors:'N. Kumar',title:'Texture feature analysis for medical images',venue:'Medical Imaging Workshop',year:2023,type:'workshop',doi:'#',link:'#'}
+      ],
+      projects:[
+        {title:'Seed Grant: Research equipment purchase',agency:'Institute Seed Grant',amount:'₹5,58,000',duration:'2024-2025',desc:'GPU machine, Raspberry Pi, Jetson, sensors.'}
+      ]
+    }
+
+    /********** Small utility & render functions **********/
+    function el(q, parent=document){return parent.querySelector(q)}
+    function els(q,parent=document){return [...parent.querySelectorAll(q)]}
+
+    // populate profile
+    document.getElementById('prof-name').textContent = DATA.profile.name
+    document.getElementById('headline').textContent = `${DATA.profile.name} — ${DATA.profile.title}`
+    document.getElementById('short-bio').textContent = DATA.profile.bio
+    document.getElementById('gs-link').href = DATA.profile.links.scholar
+    document.getElementById('rg-link').href = DATA.profile.links.researchgate
+    document.getElementById('orcid-link').href = DATA.profile.links.orcid
+    document.getElementById('email-link').href = 'mailto:you@institute.edu'
+
+    // students
+    function renderStudents(){
+      const phdBody = el('#phd-table tbody')
+      phdBody.innerHTML = ''
+      DATA.students.phd.forEach(s=>{
+        const tr = document.createElement('tr')
+        tr.innerHTML = `<td>${s.name}</td><td>${s.topic}</td><td>${s.start}</td><td>${s.status}</td>`
+        phdBody.appendChild(tr)
+      })
+      const mBody = el('#mtech-table tbody')
+      mBody.innerHTML = ''
+      DATA.students.mtech.forEach(s=>{
+        const tr = document.createElement('tr')
+        tr.innerHTML = `<td>${s.name}</td><td>${s.project}</td><td>${s.year}</td><td>${s.role}</td>`
+        mBody.appendChild(tr)
+      })
+    }
+    renderStudents()
+
+    // publications
+    const pubList = el('#pub-list')
+    const pubCount = el('#pub-count')
+    const yearFilter = el('#year-filter')
+    const typeFilter = el('#type-filter')
+    const pubSearch = el('#pub-search')
+
+    function buildYearOptions(){
+      const years = Array.from(new Set(DATA.publications.map(p=>p.year))).sort((a,b)=>b-a)
+      years.forEach(y=>{const opt=document.createElement('option');opt.value=y;opt.textContent=y;yearFilter.appendChild(opt)})
+    }
+    function renderPubs(filterText='',year='all',type='all'){
+      const q = filterText.trim().toLowerCase()
+      let list = DATA.publications.filter(p=>{
+        if(year!=='all' && p.year!=year) return false
+        if(type!=='all' && p.type!==type) return false
+        if(!q) return true
+        const hay = `${p.authors} ${p.title} ${p.venue} ${p.year}`.toLowerCase()
+        return hay.includes(q)
+      })
+      pubList.innerHTML = ''
+      list.forEach(p=>{
+        const d = document.createElement('div')
+        d.className='pub'
+        d.innerHTML = `<strong>${p.title}</strong><div class="meta">${p.authors} — ${p.venue} (${p.year}) • ${p.type}</div><div style="margin-top:8px"><a href="${p.link}" target="_blank">PDF / Link</a> ${p.doi?`• <a href='${p.doi}'>DOI</a>`:''}</div>`
+        pubList.appendChild(d)
+      })
+      pubCount.textContent = list.length
+    }
+
+    buildYearOptions(); renderPubs()
+
+    pubSearch.addEventListener('input', ()=>{
+      renderPubs(pubSearch.value, yearFilter.value, typeFilter.value)
+    })
+    yearFilter.addEventListener('change', ()=>{renderPubs(pubSearch.value, yearFilter.value, typeFilter.value)})
+    typeFilter.addEventListener('change', ()=>{renderPubs(pubSearch.value, yearFilter.value, typeFilter.value)})
+
+    // projects
+    const projList = el('#projects-list')
+    DATA.projects.forEach(p=>{
+      const d = document.createElement('div')
+      d.style.marginTop='10px'
+      d.innerHTML = `<strong>${p.title}</strong><div class="meta">${p.agency} • ${p.duration} • ${p.amount || ''}</div><p style='margin-top:6px'>${p.desc}</p>`
+      projList.appendChild(d)
+    })
+
+    // nav behavior (single-page scroll + hash)
+    function setActiveNav(target){
+      els('.navlink').forEach(a=>a.classList.toggle('active', a.dataset.target===target))
+    }
+    els('.navlink').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault()
+        const t = a.dataset.target
+        document.getElementById(t).scrollIntoView({behavior:'smooth',block:'start'})
+        setActiveNav(t)
+      })
+    })
+
+    // expose a small function for easy edits via console
+    window.SITE = {DATA, renderStudents, renderPubs}
+  </script>
+</body>
 </html>
