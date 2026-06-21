@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Publications — Dr M Naveen Kumar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- SVG sprite (reused from index) -->
+  <svg aria-hidden="true" style="display:none;">
+    <symbol id="icon-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6.5A2.5 2.5 0 014.5 4h15A2.5 2.5 0 0122 6.5v11A2.5 2.5 0 0119.5 20h-15A2.5 2.5 0 012 17.5v-11zM4.5 6a.5.5 0 00-.5.5V8l8 4.5L20 8V6.5a.5.5 0 00-.5-.5h-15z" /></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">← Back to Home</a>
+      <nav class="nav-links">
+        <a href="index.html#research">Research</a>
+        <a href="index.html#publications">Publications</a>
+        <a href="index.html#teaching">Teaching</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="publications-list">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Publications</p>
+          <h2>All publications — filter by year</h2>
+        </div>
+
+        <div class="filter-row">
+          <label for="yearFilter">Year:</label>
+          <select id="yearFilter">
+            <option value="all">All</option>
+          </select>
+          <input id="searchInput" placeholder="Search title or authors" />
+        </div>
+
+        <div id="pubGrid" class="publications-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Dr M Naveen Kumar — SRM University-AP</p>
+    </div>
+  </footer>
+
+  <script src="publications.js"></script>
+</body>
+</html>
